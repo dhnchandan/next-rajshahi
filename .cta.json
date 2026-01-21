@@ -1,0 +1,29 @@
+{
+  "projectName": "next-rajshahi",
+  "mode": "file-router",
+  "typescript": true,
+  "packageManager": "pnpm",
+  "tailwind": true,
+  "addOnOptions": {
+    "drizzle": {
+      "database": "sqlite"
+    }
+  },
+  "git": true,
+  "version": 1,
+  "framework": "react-cra",
+  "chosenAddOns": [
+    "eslint",
+    "cloudflare",
+    "start",
+    "convex",
+    "compiler",
+    "drizzle",
+    "form",
+    "oRPC",
+    "shadcn",
+    "table",
+    "tanstack-query",
+    "events"
+  ]
+}
