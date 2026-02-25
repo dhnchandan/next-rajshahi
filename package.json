@@ -19,6 +19,7 @@
     "cf": "wrangler types"
   },
   "dependencies": {
+    "@base-ui/react": "^1.2.0",
     "@cloudflare/vite-plugin": "^1.25.5",
     "@convex-dev/react-query": "0.1.0",
     "@faker-js/faker": "^10.3.0",
@@ -88,12 +89,13 @@
     "lucide-react": "^0.575.0",
     "marked": "^17.0.3",
     "next-themes": "^0.4.6",
+    "radix-ui": "^1.4.3",
     "react": "^19.2.4",
     "react-day-picker": "^9.13.2",
     "react-dom": "^19.2.4",
     "react-hook-form": "^7.71.2",
     "react-resizable-panels": "^4.6.5",
-    "recharts": "3.7.0",
+    "recharts": "2.15.4",
     "sonner": "^2.0.7",
     "streamdown": "^2.3.0",
     "tailwind-merge": "^3.5.0",
