@@ -22,7 +22,7 @@ export function HeroBlock() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="mb-6 inline-block"
           >
-            <div className="mx-auto h-24 w-24 rounded-full border-4 border-background bg-gradient-to-br from-primary to-muted shadow-lg" />
+            <div className="mx-auto h-24 w-24 rounded-full border-4 border-background bg-linear-to-br from-primary to-muted shadow-lg" />
           </motion.div>
 
           <motion.h1

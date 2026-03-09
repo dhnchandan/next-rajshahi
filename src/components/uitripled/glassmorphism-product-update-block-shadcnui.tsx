@@ -92,7 +92,7 @@ export function GlassmorphismProductUpdateBlock() {
               }}
             >
               <Card className="group relative overflow-hidden rounded-3xl border border-border/50 bg-background/45 p-8 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.04] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.04] via-transparent to-transparent" />
                 <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">

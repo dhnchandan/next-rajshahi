@@ -93,7 +93,7 @@ function SchedulePage() {
                   onClick={() => setSelectedDay(day.day)}
                   className={`relative px-8 py-4 rounded-xl font-display font-semibold transition-all duration-300 ${
                     selectedDay === day.day
-                      ? 'bg-gradient-to-br from-copper to-copper-dark text-charcoal shadow-lg shadow-copper/20'
+                      ? 'bg-linear-to-br from-copper to-copper-dark text-charcoal shadow-lg shadow-copper/20'
                       : 'text-cream/70 hover:text-cream hover:bg-card'
                   }`}
                 >
@@ -124,7 +124,7 @@ function SchedulePage() {
         <div className="max-w-5xl mx-auto px-6 pb-20">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-copper via-gold to-copper/30" />
+            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-px bg-linear-to-b from-copper via-gold to-copper/30" />
 
             {/* Sessions */}
             <div className="space-y-8">
@@ -171,7 +171,7 @@ function SchedulePage() {
                             alt={talk.title}
                             className="w-full h-full object-cover opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/95 to-charcoal/80" />
+                          <div className="absolute inset-0 bg-linear-to-r from-charcoal via-charcoal/95 to-charcoal/80" />
                         </div>
 
                         {/* Content */}
@@ -185,7 +185,7 @@ function SchedulePage() {
                                   alt={speaker.name}
                                   className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
+                                <div className="absolute inset-0 bg-linear-to-t from-charcoal/40 to-transparent" />
                               </div>
                             </div>
                           )}
@@ -246,7 +246,7 @@ function SchedulePage() {
 
         {/* Bottom CTA */}
         <div className="max-w-4xl mx-auto px-6 pb-20">
-          <div className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-br from-card to-charcoal border border-border/50 overflow-hidden text-center">
+          <div className="relative p-8 md:p-12 rounded-3xl bg-linear-to-br from-card to-charcoal border border-border/50 overflow-hidden text-center">
             <div className="absolute top-0 right-0 w-64 h-64 bg-copper/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl" />
 
@@ -261,7 +261,7 @@ function SchedulePage() {
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   to="/talks"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-copper to-copper-dark text-charcoal font-semibold transition-all hover:shadow-lg hover:shadow-copper/30 hover:scale-[1.02]"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-copper to-copper-dark text-charcoal font-semibold transition-all hover:shadow-lg hover:shadow-copper/30 hover:scale-[1.02]"
                 >
                   Browse All Sessions
                 </Link>

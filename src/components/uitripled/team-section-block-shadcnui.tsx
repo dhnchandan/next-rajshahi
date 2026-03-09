@@ -155,7 +155,7 @@ function TeamMemberCard({ member }: { member: (typeof teamMembers)[0] }) {
         <Card className="relative overflow-hidden rounded-3xl border border-border/60 bg-card  backdrop-blur-xl transition-shadow duration-500">
           {/* Animated gradient overlay */}
           <motion.div
-            className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+            className={`absolute inset-0 bg-linear-to-br ${member.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
             animate={
               isHovered
                 ? { opacity: 1 }
@@ -381,14 +381,14 @@ export function TeamSectionBlock() {
 
           <motion.h2
             id="team-section-heading"
-            className="mb-6 bg-gradient-to-r from-white via-white/80 to-white/60 bg-clip-text text-5xl font-semibold tracking-tight text-transparent md:text-6xl"
+            className="mb-6 bg-linear-to-r from-white via-white/80 to-white/60 bg-clip-text text-5xl font-semibold tracking-tight text-transparent md:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             Meet the people behind
             <br />
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               our success
             </span>
           </motion.h2>
@@ -433,7 +433,7 @@ export function TeamSectionBlock() {
               className="group relative overflow-hidden rounded-full bg-primary px-10 py-6 text-primary-foreground shadow-lg shadow-primary/25 transition-transform duration-300 hover:translate-y-[-2px]"
             >
               <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                className="absolute inset-0 bg-linear-to-r from-white/10 via-white/20 to-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 animate={
                   shouldReduceMotion ? undefined : { x: ["-120%", "120%"] }
                 }

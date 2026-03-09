@@ -28,7 +28,7 @@ export default function SpeakerCard({
             alt={speaker.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-charcoal via-charcoal/50 to-transparent" />
         </div>
 
         {/* Content overlay */}
@@ -59,7 +59,7 @@ export default function SpeakerCard({
 
         {/* Decorative corner accent */}
         <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
-          <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-copper/20 to-transparent transform rotate-45 translate-x-14 -translate-y-14" />
+          <div className="absolute top-0 right-0 w-28 h-28 bg-linear-to-bl from-copper/20 to-transparent transform rotate-45 translate-x-14 -translate-y-14" />
         </div>
       </Card>
     </Link>

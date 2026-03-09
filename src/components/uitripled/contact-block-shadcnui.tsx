@@ -60,7 +60,7 @@ export function ContactBlock() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Card className="relative overflow-hidden rounded-xl border border-border/40 bg-background/60 p-6 backdrop-blur-sm sm:p-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-50" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-50" />
               <form className="relative z-10 space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
@@ -129,7 +129,7 @@ export function ContactBlock() {
                   transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
                 >
                   <Card className="group relative overflow-hidden rounded-xl border border-border/40 bg-background/60 p-4 transition-all duration-300 hover:border-foreground/20 hover:shadow-md hover:-translate-y-1 backdrop-blur-sm sm:p-6">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     <a
                       href={info.href}
                       className="relative z-10 flex items-center gap-4"

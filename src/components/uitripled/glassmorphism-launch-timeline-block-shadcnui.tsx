@@ -72,7 +72,7 @@ export function GlassmorphismLaunchTimelineBlock() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative overflow-hidden rounded-3xl border border-border/50 bg-background/45 p-10 backdrop-blur-2xl"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.04] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.04] via-transparent to-transparent" />
           <div className="relative">
             <Badge
               variant="outline"
@@ -110,7 +110,7 @@ export function GlassmorphismLaunchTimelineBlock() {
           animate="show"
           className="relative flex flex-col gap-4"
         >
-          <div className="pointer-events-none absolute left-[22px] top-4 bottom-4 hidden w-px bg-gradient-to-b from-foreground/10 via-foreground/5 to-transparent lg:block" />
+          <div className="pointer-events-none absolute left-[22px] top-4 bottom-4 hidden w-px bg-linear-to-b from-foreground/10 via-foreground/5 to-transparent lg:block" />
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -137,7 +137,7 @@ export function GlassmorphismLaunchTimelineBlock() {
                     </p>
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-10" />
+                <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-10" />
               </motion.li>
             );
           })}

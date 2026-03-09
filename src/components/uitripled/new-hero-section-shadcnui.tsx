@@ -37,7 +37,7 @@ export function NewHeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 px-4 py-20 md:py-32 w-full">
+    <section className="relative overflow-hidden bg-linear-to-br from-background via-background to-primary/5 px-4 py-20 md:py-32 w-full">
       <div className="mx-auto max-w-7xl">
         <motion.div
           variants={containerVariants}
@@ -58,7 +58,7 @@ export function NewHeroSection() {
           >
             Transform Your Business
             <br />
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               With Innovation
             </span>
           </motion.h1>

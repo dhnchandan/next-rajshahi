@@ -19,7 +19,7 @@ export function CTAHeroBlock() {
   const [isVideoHovered, setIsVideoHovered] = useState(false);
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background px-4 py-16 md:py-24 lg:py-32">
+    <section className="relative w-full overflow-hidden bg-linear-to-b from-primary/5 via-background to-background px-4 py-16 md:py-24 lg:py-32">
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <motion.div
@@ -63,13 +63,13 @@ export function CTAHeroBlock() {
             </motion.div>
 
             <motion.h1
-              className="mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:mb-6 md:text-5xl lg:text-6xl"
+              className="mb-4 bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:mb-6 md:text-5xl lg:text-6xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
               Transform Your Business{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Today
               </span>
             </motion.h1>
@@ -178,14 +178,14 @@ export function CTAHeroBlock() {
               onHoverEnd={() => setIsVideoHovered(false)}
               className="relative w-full max-w-lg"
             >
-              <Card className="relative overflow-hidden border-border/50 bg-gradient-to-br from-card to-card/50 p-4 shadow-2xl md:p-6">
+              <Card className="relative overflow-hidden border-border/50 bg-linear-to-br from-card to-card/50 p-4 shadow-2xl md:p-6">
                 <motion.div
-                  className="relative aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-primary/20 to-primary/5"
+                  className="relative aspect-video overflow-hidden rounded-lg bg-linear-to-br from-primary/20 to-primary/5"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
                   {/* Video thumbnail */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-purple-500/10">
+                  <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-primary/10 to-purple-500/10">
                     <motion.div
                       animate={
                         isVideoHovered

@@ -77,7 +77,7 @@ function HomePage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/speakers"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-copper to-copper-dark text-charcoal font-semibold text-lg transition-all hover:shadow-lg hover:shadow-copper/30 hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-linear-to-r from-copper to-copper-dark text-charcoal font-semibold text-lg transition-all hover:shadow-lg hover:shadow-copper/30 hover:scale-[1.02]"
             >
               <Users className="w-5 h-5" />
               Meet Our Speakers
@@ -134,7 +134,7 @@ function HomePage() {
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="h-px bg-linear-to-r from-transparent via-border to-transparent" />
       </div>
 
       {/* Featured Sessions Section */}
@@ -179,7 +179,7 @@ function HomePage() {
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="relative p-12 rounded-3xl bg-gradient-to-br from-card to-charcoal border border-border/50 overflow-hidden">
+          <div className="relative p-12 rounded-3xl bg-linear-to-br from-card to-charcoal border border-border/50 overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-copper/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl" />

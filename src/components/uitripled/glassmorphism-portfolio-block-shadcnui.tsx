@@ -104,7 +104,7 @@ export function GlassmorphismPortfolioBlock() {
           className="relative overflow-hidden rounded-3xl border border-border/50 bg-background/45 p-8 backdrop-blur-2xl md:p-12"
         >
           {/* Glass gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.05] via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.05] via-transparent to-transparent pointer-events-none" />
 
           <div className="relative grid gap-12 lg:grid-cols-2">
             {/* Left column - Main content */}
@@ -152,7 +152,7 @@ export function GlassmorphismPortfolioBlock() {
                     whileHover={{ y: -4 }}
                     className="group relative overflow-hidden rounded-2xl border border-border/40 bg-background/60 p-5 backdrop-blur transition-all hover:border-border/60 hover:shadow-lg"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-10" />
+                    <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-10" />
                     <div className="relative space-y-2">
                       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/40">
                         {item.title}
@@ -188,7 +188,7 @@ export function GlassmorphismPortfolioBlock() {
 
             {/* Right column - Profile card */}
             <div className="relative">
-              <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-primary/15 via-transparent to-transparent blur-3xl" />
+              <div className="absolute inset-0 rounded-[32px] bg-linear-to-b from-primary/15 via-transparent to-transparent blur-3xl" />
               <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-[28px] border border-border/50 bg-background/60 p-8 backdrop-blur-xl">
                 <div className="flex flex-col items-center text-center">
                   {/* Avatar with glow */}

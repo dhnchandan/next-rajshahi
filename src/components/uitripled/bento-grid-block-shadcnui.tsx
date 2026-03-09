@@ -186,7 +186,7 @@ export function BentoGridBlock() {
             role="article"
             aria-label="Featured case study"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.05] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.05] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <div className="relative flex h-full flex-col justify-between">
               <div className="space-y-4">
                 <Badge
@@ -293,7 +293,7 @@ export function BentoGridBlock() {
                 alt="Designer workstation lit with cinematic lighting"
                 className="h-full w-full object-cover opacity-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-transparent" />
             </div>
             <div className="relative flex h-full flex-col justify-end space-y-4 p-6 md:p-8">
               <Badge
@@ -388,7 +388,7 @@ export function BentoGridBlock() {
             variants={cardVariants}
             whileHover={{ y: -4 }}
             transition={{ duration: 0.2 }}
-            className="group col-span-1 flex h-full flex-col overflow-hidden rounded-2xl border border-border/40 bg-gradient-to-br from-primary/15 via-background/70 to-background/90 p-0 backdrop-blur transition-all hover:border-border/60 hover:shadow-lg sm:col-span-2"
+            className="group col-span-1 flex h-full flex-col overflow-hidden rounded-2xl border border-border/40 bg-linear-to-br from-primary/15 via-background/70 to-background/90 p-0 backdrop-blur transition-all hover:border-border/60 hover:shadow-lg sm:col-span-2"
             role="article"
             aria-label="Motion showcase video"
           >
@@ -398,7 +398,7 @@ export function BentoGridBlock() {
                 alt="Motion design workspace with monitors"
                 className="absolute inset-0 h-full w-full object-cover opacity-30 transition-opacity duration-500 group-hover:opacity-40"
               />
-              <div className="relative flex h-full flex-col justify-between bg-gradient-to-br from-background/90 via-background/70 to-transparent p-6 md:p-8">
+              <div className="relative flex h-full flex-col justify-between bg-linear-to-br from-background/90 via-background/70 to-transparent p-6 md:p-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Badge

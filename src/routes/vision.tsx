@@ -10,7 +10,7 @@ export const Route = createFileRoute('/vision')({
 
 function VisionPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Header Navigation */}
       <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-lime-400/20">
         <div className="max-w-7xl mx-auto px-6 py-6">
@@ -55,9 +55,9 @@ function VisionPage() {
               আমরা চাই এমন একটি শহর যেখানে:
             </p>
           </div>
-          <div className="bg-gradient-to-br from-lime-400/20 to-cyan-400/20 border border-lime-400/40 rounded-2xl p-8">
+          <div className="bg-linear-to-br from-lime-400/20 to-cyan-400/20 border border-lime-400/40 rounded-2xl p-8">
             <div className="text-center">
-              <div className="text-6xl font-black bg-gradient-to-r from-lime-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+              <div className="text-6xl font-black bg-linear-to-r from-lime-400 to-cyan-400 bg-clip-text text-transparent mb-4">
                 5
               </div>
               <p className="text-white font-bold">রূপান্তরমূলক স্তম্ভ</p>
@@ -235,7 +235,7 @@ function VisionPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-lime-500/10 to-cyan-500/10 border border-lime-400/30 rounded-2xl p-8">
+            <div className="bg-linear-to-br from-lime-500/10 to-cyan-500/10 border border-lime-400/30 rounded-2xl p-8">
               <h3 className="text-white font-bold mb-6 text-lg">ফলাফল</h3>
               <ul className="space-y-4">
                 <li className="flex gap-3">
@@ -344,7 +344,7 @@ function VisionPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
+      <section className="bg-linear-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
             এই ভিশন বাস্তব করার পরিকল্পনা
@@ -405,7 +405,7 @@ function PillarCard({ icon, title, subtitle, color, features, benefits }: any) {
   return (
     <div className="bg-slate-800/50 border border-lime-400/20 rounded-2xl p-10 hover:border-lime-400/50 transition-all">
       <div className="flex items-start gap-6">
-        <div className={`flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br ${color} text-white flex-shrink-0`}>
+        <div className={`flex h-16 w-16 items-center justify-center rounded-xl bg-linear-to-br ${color} text-white flex-shrink-0`}>
           {icon}
         </div>
         <div className="flex-1">
@@ -452,7 +452,7 @@ function MetricCard({ metric, current, target, timeline, what }: any) {
           <p className="text-2xl font-black text-orange-400">{current}</p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="flex-1 h-1 bg-gradient-to-r from-orange-400 to-lime-400 rounded-full"></div>
+          <div className="flex-1 h-1 bg-linear-to-r from-orange-400 to-lime-400 rounded-full"></div>
         </div>
         <div>
           <p className="text-xs text-gray-400 mb-1">লক্ষ্য</p>
@@ -475,9 +475,9 @@ function MetricCard({ metric, current, target, timeline, what }: any) {
 
 function TimelinePhase({ phase, title, description, items, color }: any) {
   return (
-    <div className={`bg-gradient-to-r ${color}/10 border border-${color.split('-')[1]}-500/30 rounded-xl p-8`}>
+    <div className={`bg-linear-to-r ${color}/10 border border-${color.split('-')[1]}-500/30 rounded-xl p-8`}>
       <div className="flex items-start gap-6">
-        <div className={`flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br ${color} text-white font-bold flex-shrink-0`}>
+        <div className={`flex h-14 w-14 items-center justify-center rounded-lg bg-linear-to-br ${color} text-white font-bold flex-shrink-0`}>
           {phase.split(' ')[1]}
         </div>
         <div className="flex-1">

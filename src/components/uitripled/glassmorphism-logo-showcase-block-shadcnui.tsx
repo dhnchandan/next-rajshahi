@@ -34,7 +34,7 @@ export function GlassmorphismLogoShowcaseBlock() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative overflow-hidden rounded-3xl border border-border/50 bg-background/45 p-10 backdrop-blur-2xl"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.05] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.05] via-transparent to-transparent" />
           <div className="relative space-y-8">
             <Badge
               variant="outline"

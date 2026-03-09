@@ -74,7 +74,7 @@ export function TimelineBlock() {
         <div className="relative">
           {/* Vertical line */}
           <motion.div
-            className="absolute left-4 top-0 h-full w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20 md:left-1/2 md:-translate-x-1/2"
+            className="absolute left-4 top-0 h-full w-0.5 bg-linear-to-b from-primary via-primary/50 to-primary/20 md:left-1/2 md:-translate-x-1/2"
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
@@ -135,7 +135,7 @@ export function TimelineBlock() {
                     >
                       <Card className="relative overflow-hidden border-border/50 bg-card p-4 shadow-lg md:p-6">
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                          className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                           whileHover={{ opacity: 1 }}
                         />
 

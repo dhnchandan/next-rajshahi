@@ -45,7 +45,7 @@ function TalkDetailPage() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-6 bg-gradient-to-t from-charcoal/60 to-transparent rounded-2xl pointer-events-none" />
+        <div className="absolute inset-6 bg-linear-to-t from-charcoal/60 to-transparent rounded-2xl pointer-events-none" />
       </div>
 
       {/* Content */}

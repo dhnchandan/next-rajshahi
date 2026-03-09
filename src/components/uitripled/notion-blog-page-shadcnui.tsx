@@ -74,7 +74,7 @@ export function NotionBlogPage() {
         transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
         className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-border/40 bg-background shadow-xl shadow-black/5"
       >
-        <div className="relative h-56 w-full bg-gradient-to-br from-amber-100 via-white to-slate-100 md:h-64">
+        <div className="relative h-56 w-full bg-linear-to-br from-amber-100 via-white to-slate-100 md:h-64">
           <motion.div
             initial={{ scale: 1.08, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -91,7 +91,7 @@ export function NotionBlogPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"
+            className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent"
           />
           <motion.div
             initial={{ opacity: 0, y: 12 }}

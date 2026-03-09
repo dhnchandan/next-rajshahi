@@ -17,7 +17,7 @@ export function HoverExpandCard() {
         role="group"
         aria-label="Hover expand card demonstrating glassmorphic elevation."
       >
-        <div className="relative mb-4 h-40 overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-foreground/10 via-background/40 to-transparent">
+        <div className="relative mb-4 h-40 overflow-hidden rounded-2xl border border-border/60 bg-linear-to-br from-foreground/10 via-background/40 to-transparent">
           <motion.div
             aria-hidden
             className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.4),transparent_55%),radial-gradient(circle_at_80%_0%,rgba(79,70,229,0.45),transparent_60%)] transition-transform duration-500"

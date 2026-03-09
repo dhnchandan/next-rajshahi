@@ -44,7 +44,7 @@ export function FAQAccordionBlock() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="w-full bg-gradient-to-b from-background to-muted/30 px-4 py-16 md:py-24">
+    <section className="w-full bg-linear-to-b from-background to-muted/30 px-4 py-16 md:py-24">
       <div className="mx-auto max-w-4xl">
         {/* Header */}
         <motion.div
@@ -132,7 +132,7 @@ export function FAQAccordionBlock() {
           transition={{ delay: 0.8 }}
           className="mt-12 text-center md:mt-16"
         >
-          <Card className="border-border/50 bg-gradient-to-br from-card to-muted/30 p-6 md:p-8">
+          <Card className="border-border/50 bg-linear-to-br from-card to-muted/30 p-6 md:p-8">
             <MessageCircle className="mx-auto mb-4 h-12 w-12 text-primary" />
             <h3 className="mb-2 text-xl font-bold md:text-2xl">
               Still have questions?

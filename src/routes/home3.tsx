@@ -8,7 +8,7 @@ export const Route = createFileRoute('/home3')({
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-lime-400/20">
         <div className="max-w-7xl mx-auto px-6 py-6">
@@ -67,7 +67,7 @@ function HomePage() {
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 to-cyan-400/20 blur-3xl rounded-full"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-lime-400/20 to-cyan-400/20 blur-3xl rounded-full"></div>
             <div className="relative bg-slate-800/50 border border-lime-400/20 rounded-2xl p-8 space-y-6">
               <div className="text-5xl font-black text-lime-400">৫</div>
               <h3 className="text-2xl font-bold text-white">পরিবর্তনমূলক স্তম্ভ</h3>
@@ -154,7 +154,7 @@ function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-lime-400 to-cyan-400 py-20">
+      <section className="bg-linear-to-r from-lime-400 to-cyan-400 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
             রাজশাহীর ভবিষ্যৎ গড়ুন আজই

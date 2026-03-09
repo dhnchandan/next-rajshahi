@@ -10,7 +10,7 @@ export const Route = createFileRoute('/governance')({
 
 function GovernancePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Header Navigation */}
       <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-lime-400/20">
         <div className="max-w-7xl mx-auto px-6 py-6">
@@ -91,7 +91,7 @@ function GovernancePage() {
           />
         </div>
 
-        <Card className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/30 p-8">
+        <Card className="bg-linear-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/30 p-8">
           <h3 className="text-white font-bold mb-4 flex items-center gap-2">
             <Target className="w-5 h-5 text-purple-400" />
             এই কাঠামো কীভাবে কাজ করে
@@ -229,7 +229,7 @@ function GovernancePage() {
           />
         </div>
 
-        <Card className="bg-gradient-to-br from-lime-500/10 to-cyan-500/10 border border-lime-400/30 p-8">
+        <Card className="bg-linear-to-br from-lime-500/10 to-cyan-500/10 border border-lime-400/30 p-8">
           <h3 className="text-white font-bold mb-4 flex items-center gap-2">
             <Eye className="w-5 h-5 text-lime-400" />
             ড্যাশবোর্ডে দেখা যাবে
@@ -328,7 +328,7 @@ function GovernancePage() {
               </ul>
             </Card>
           </div>
-          <Card className="bg-gradient-to-br from-purple-500/10 to-slate-800/50 border border-purple-500/30 p-8">
+          <Card className="bg-linear-to-br from-purple-500/10 to-slate-800/50 border border-purple-500/30 p-8">
             <h3 className="text-white font-bold mb-6">বৈচিত্র্যময় অর্থায়ন</h3>
             <div className="space-y-4">
               <FundingSource
@@ -461,7 +461,7 @@ function GovernancePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
+      <section className="bg-linear-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
             এখনই শুরু করুন
@@ -518,7 +518,7 @@ function GovernancePage() {
 
 function GovernanceRole({ title, subtitle, icon, responsibilities, color }: any) {
   return (
-    <Card className={`bg-gradient-to-br ${color}/10 border-${color.split('-')[1]}-500/30 p-8`}>
+    <Card className={`bg-linear-to-br ${color}/10 border-${color.split('-')[1]}-500/30 p-8`}>
       <div className="text-5xl mb-4">{icon}</div>
       <h3 className="text-2xl font-bold text-white mb-1">{title}</h3>
       <p className={`text-${color.split('-')[1]}-400 font-bold text-sm mb-6`}>{subtitle}</p>
@@ -569,7 +569,7 @@ function DashboardMetric({ category, metric, current, target, deadline, status }
           <p className="text-2xl font-black text-orange-400">{current}</p>
         </div>
         <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-orange-400 to-lime-400" style={{width: '30%'}}></div>
+          <div className="h-full bg-linear-to-r from-orange-400 to-lime-400" style={{width: '30%'}}></div>
         </div>
         <div>
           <p className="text-xs text-gray-400 mb-1">লক্ষ্য</p>

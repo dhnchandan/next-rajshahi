@@ -81,7 +81,7 @@ export function GlassmorphismMinimalMetricsBlock() {
           {metrics.map((metric) => (
             <motion.div key={metric.label} variants={fadeUp}>
               <Card className="group relative overflow-hidden rounded-3xl border border-border/50 bg-background/45 p-8 backdrop-blur-2xl transition-transform duration-300 hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.04] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.04] via-transparent to-transparent" />
                 <div className="relative z-10 space-y-5">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-medium uppercase tracking-[0.25em] text-foreground/60">

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/contact')({
 
 function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
       <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-lime-400/20">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
@@ -95,7 +95,7 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
+      <section className="bg-linear-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
             আগামী দশকের জন্য প্রস্তুত?
@@ -164,8 +164,8 @@ function ContactCard({
   gradient: string
 }) {
   return (
-    <div className={`bg-gradient-to-br ${gradient}/10 border border-white/10 rounded-2xl p-8`}>
-      <div className={`flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} to-cyan-400 text-white mb-6`}>
+    <div className={`bg-linear-to-br ${gradient}/10 border border-white/10 rounded-2xl p-8`}>
+      <div className={`flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br ${gradient} to-cyan-400 text-white mb-6`}>
         {icon}
       </div>
       <h3 className="text-xl font-bold text-white mb-2">{title}</h3>

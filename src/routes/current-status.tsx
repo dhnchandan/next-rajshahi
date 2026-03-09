@@ -10,7 +10,7 @@ export const Route = createFileRoute('/current-status')({
 
 function CurrentStatusPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Header Navigation */}
       <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-lime-400/20">
         <div className="max-w-7xl mx-auto px-6 py-6">
@@ -287,7 +287,7 @@ function CurrentStatusPage() {
       </section>
 
       {/* Why Change Now */}
-      <section className="bg-gradient-to-r from-red-900/30 to-orange-900/30 border border-red-500/30 rounded-2xl my-20">
+      <section className="bg-linear-to-r from-red-900/30 to-orange-900/30 border border-red-500/30 rounded-2xl my-20">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">পরিবর্তন এখনই কেন জরুরি?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -321,7 +321,7 @@ function CurrentStatusPage() {
 
       {/* Opportunity Window */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="bg-gradient-to-r from-lime-600/20 to-cyan-600/20 border border-lime-400/40 rounded-2xl p-12">
+        <div className="bg-linear-to-r from-lime-600/20 to-cyan-600/20 border border-lime-400/40 rounded-2xl p-12">
           <h2 className="text-4xl font-bold text-white mb-6">আমাদের সুযোগ এখনই</h2>
           <p className="text-gray-300 text-lg mb-8 leading-relaxed">
             বিশ্বের অনেক মাঝারি শহর এক লাফে এগিয়েছে। রাজশাহীর কাছে আছে শিক্ষিত জনশক্তি, আছে প্রতিষ্ঠান, আছে ঐতিহ্য। আমাদের দরকার সঠিক দিকনির্দেশনা এবং সাহস।
@@ -353,7 +353,7 @@ function CurrentStatusPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
+      <section className="bg-linear-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
             বাস্তবতা বুঝেছি, এখন সমাধান দেখুন
@@ -425,7 +425,7 @@ function EconomyCard({ title, items, status, color }: any) {
   return (
     <Card className="bg-slate-800/50 border-lime-400/20 p-8 hover:border-lime-400/50 transition-all">
       <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
-      <div className={`h-1 w-16 bg-gradient-to-r ${color} to-cyan-400 rounded-full mb-6`}></div>
+      <div className={`h-1 w-16 bg-linear-to-r ${color} to-cyan-400 rounded-full mb-6`}></div>
       <ul className="space-y-2 mb-6">
         {items.map((item: string, i: number) => (
           <li key={i} className="text-gray-300 flex items-center gap-2">

@@ -41,7 +41,7 @@ function Messages({ messages }: { messages: ConferenceChatMessages }) {
           key={id}
           className={`py-3 ${
             role === 'assistant'
-              ? 'bg-gradient-to-r from-copper/5 via-gold/5 to-copper/5'
+              ? 'bg-linear-to-r from-copper/5 via-gold/5 to-copper/5'
               : 'bg-transparent'
           }`}
         >
@@ -50,7 +50,7 @@ function Messages({ messages }: { messages: ConferenceChatMessages }) {
               return (
                 <div key={index} className="flex items-start gap-3 px-4">
                   {role === 'assistant' ? (
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-copper via-copper-dark to-gold flex items-center justify-center text-xs font-bold text-charcoal flex-shrink-0 shadow-lg shadow-copper/20">
+                    <div className="w-7 h-7 rounded-full bg-linear-to-br from-copper via-copper-dark to-gold flex items-center justify-center text-xs font-bold text-charcoal flex-shrink-0 shadow-lg shadow-copper/20">
                       👨‍🍳
                     </div>
                   ) : (
@@ -116,14 +116,14 @@ export default function RemyAssistant({
   if (!isOpen) return null
 
   return (
-    <div className="fixed top-36 right-4 z-[100] w-[400px] h-[520px] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-copper/20 backdrop-blur-xl bg-gradient-to-b from-charcoal/98 via-charcoal/95 to-charcoal-light/98">
+    <div className="fixed top-36 right-4 z-[100] w-[400px] h-[520px] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-copper/20 backdrop-blur-xl bg-linear-to-b from-charcoal/98 via-charcoal/95 to-charcoal-light/98">
       {/* Decorative top gradient */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-copper/10 via-gold/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-32 bg-linear-to-b from-copper/10 via-gold/5 to-transparent pointer-events-none" />
 
       {/* Header */}
       <div className="relative flex items-center justify-between p-4 border-b border-copper/10">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-copper via-copper-dark to-gold flex items-center justify-center shadow-lg shadow-copper/30 rotate-3 hover:rotate-0 transition-transform">
+          <div className="w-10 h-10 rounded-xl bg-linear-to-br from-copper via-copper-dark to-gold flex items-center justify-center shadow-lg shadow-copper/30 rotate-3 hover:rotate-0 transition-transform">
             <span className="text-lg">👨‍🍳</span>
           </div>
           <div>
@@ -199,7 +199,7 @@ export default function RemyAssistant({
             <button
               type="submit"
               disabled={!input.trim() || isLoading}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-gradient-to-r from-copper to-copper-dark text-charcoal disabled:opacity-30 disabled:bg-gray-600 disabled:from-gray-600 disabled:to-gray-600 transition-all hover:shadow-lg hover:shadow-copper/20"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-linear-to-r from-copper to-copper-dark text-charcoal disabled:opacity-30 disabled:bg-gray-600 disabled:from-gray-600 disabled:to-gray-600 transition-all hover:shadow-lg hover:shadow-copper/20"
             >
               <Send className="w-4 h-4" />
             </button>

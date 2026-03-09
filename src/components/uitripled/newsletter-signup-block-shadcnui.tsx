@@ -25,7 +25,7 @@ export function NewsletterSignupBlock() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10 px-4 py-16">
+    <section className="relative w-full overflow-hidden bg-linear-to-br from-primary/5 via-background to-primary/10 px-4 py-16">
       {/* Animated background elements */}
       <motion.div
         animate={{

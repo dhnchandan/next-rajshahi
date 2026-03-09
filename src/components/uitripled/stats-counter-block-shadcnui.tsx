@@ -81,7 +81,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export function StatsCounterBlock() {
   return (
-    <section className="w-full bg-gradient-to-b from-background to-primary/5 px-4 py-16 md:py-24">
+    <section className="w-full bg-linear-to-b from-background to-primary/5 px-4 py-16 md:py-24">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
@@ -95,7 +95,7 @@ export function StatsCounterBlock() {
           </Badge>
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Numbers That Speak{" "}
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               For Themselves
             </span>
           </h2>

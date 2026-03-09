@@ -10,7 +10,7 @@ export const Route = createFileRoute('/roadmap')({
 
 function RoadmapPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Header Navigation */}
       <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-lime-400/20">
         <div className="max-w-7xl mx-auto px-6 py-6">
@@ -278,7 +278,7 @@ function RoadmapPage() {
         <h2 className="text-4xl font-bold text-white mb-12 text-center">সময়ক্রম একনজরে</h2>
         <div className="relative">
           {/* Timeline Line */}
-          <div className="hidden md:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-blue-500 to-green-500"></div>
+          <div className="hidden md:block absolute top-20 left-0 right-0 h-1 bg-linear-to-r from-orange-500 via-blue-500 to-green-500"></div>
 
           {/* Timeline Points */}
           <div className="grid md:grid-cols-3 gap-8 relative z-10">
@@ -367,7 +367,7 @@ function RoadmapPage() {
       </section>
 
       {/* Next Steps */}
-      <section className="bg-gradient-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
+      <section className="bg-linear-to-r from-lime-400 to-cyan-400 py-20 rounded-2xl my-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
             এই রোডম্যাপ বাস্তবায়নের দায়িত্ব
@@ -424,9 +424,9 @@ function RoadmapPage() {
 
 function OverviewCard({ phase, title, duration, focus, icon, color }: any) {
   return (
-    <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-lime-400/20 p-8 text-center hover:border-lime-400/50 transition-all">
+    <Card className="bg-linear-to-br from-slate-800 to-slate-900 border-lime-400/20 p-8 text-center hover:border-lime-400/50 transition-all">
       <div className="text-5xl mb-4">{icon}</div>
-      <div className={`text-3xl font-black bg-gradient-to-r ${color} to-cyan-400 bg-clip-text text-transparent mb-2`}>
+      <div className={`text-3xl font-black bg-linear-to-r ${color} to-cyan-400 bg-clip-text text-transparent mb-2`}>
         ফেজ {phase}
       </div>
       <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
@@ -514,7 +514,7 @@ function Phase2Project({ name, partner, model, timeline, investment, impact }: a
 
 function Phase3Component({ title, description, benefits, icon }: any) {
   return (
-    <Card className="bg-gradient-to-br from-green-500/10 to-slate-800/50 border-green-500/30 p-8">
+    <Card className="bg-linear-to-br from-green-500/10 to-slate-800/50 border-green-500/30 p-8">
       <div className="flex gap-4 mb-4">
         <div className="text-4xl flex-shrink-0">{icon}</div>
         <h3 className="text-xl font-bold text-white self-center">{title}</h3>
@@ -551,7 +551,7 @@ function SequenceCard({ step, title, reason, enabling, next }: any) {
 function TimelineEntry({ year, phase, title, color, items }: any) {
   return (
     <div className="relative pt-24">
-      <div className={`h-12 w-12 rounded-full mx-auto mb-4 bg-gradient-to-br ${color} to-cyan-400 flex items-center justify-center font-bold text-white text-lg`}>
+      <div className={`h-12 w-12 rounded-full mx-auto mb-4 bg-linear-to-br ${color} to-cyan-400 flex items-center justify-center font-bold text-white text-lg`}>
         {phase.charAt(0)}
       </div>
       <div className="bg-slate-800/50 border border-lime-400/20 rounded-xl p-6 text-center">
@@ -569,9 +569,9 @@ function TimelineEntry({ year, phase, title, color, items }: any) {
 
 function IndicatorCard({ phase, indicators, color }: any) {
   return (
-    <Card className={`bg-gradient-to-br ${color}/10 border-${color.split('-')[1]}-500/30 p-8`}>
+    <Card className={`bg-linear-to-br ${color}/10 border-${color.split('-')[1]}-500/30 p-8`}>
       <h3 className={`text-lg font-bold text-white mb-6 flex items-center gap-2`}>
-        <span className={`inline-block w-3 h-3 rounded-full bg-gradient-to-r ${color} to-cyan-400`}></span>
+        <span className={`inline-block w-3 h-3 rounded-full bg-linear-to-r ${color} to-cyan-400`}></span>
         {phase}
       </h3>
       <ul className="space-y-3">

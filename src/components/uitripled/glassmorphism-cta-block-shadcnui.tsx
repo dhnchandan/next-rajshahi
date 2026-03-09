@@ -9,7 +9,7 @@ export function GlassmorphismCTABlock() {
       <div className="mx-auto max-w-5xl">
         <Card className="relative overflow-hidden border border-border/50 bg-background/50 p-16 text-center backdrop-blur-xl md:p-24">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.02] to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-br from-foreground/[0.02] to-transparent" />
           <div className="absolute left-1/4 top-0 h-96 w-96 rounded-full bg-foreground/[0.03] blur-3xl" />
 
           <div className="relative z-10 space-y-8">

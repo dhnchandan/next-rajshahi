@@ -148,7 +148,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
       className="group relative overflow-hidden rounded-xl border border-border/40 bg-background/60 p-5 backdrop-blur-sm transition-all hover:border-border/60 hover:shadow-lg hover:bg-background/80"
     >
       {/* Hover Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
 
       <div className="flex flex-col gap-4">
         {/* Header: Author & Meta */}

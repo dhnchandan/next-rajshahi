@@ -323,7 +323,7 @@ export function GlowyWavesHero() {
             className="mb-6 text-4xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl"
           >
             Welcome to immersive{" "}
-            <span className="bg-gradient-to-r from-primary via-primary/60 to-foreground/80 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary via-primary/60 to-foreground/80 bg-clip-text text-transparent">
               realtime playgrounds
             </span>
           </motion.h1>

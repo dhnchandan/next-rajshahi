@@ -172,7 +172,7 @@ export function CardsSlider() {
                     alt={card.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
 
                   <div className="absolute top-4 left-4">
                     <Badge
