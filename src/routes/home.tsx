@@ -1,600 +1,661 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import {
-    TrendingUp,
-    Leaf,
-    Shield,
-    Lightbulb,
-    Users,
-    Target,
-    BarChart3,
-    CheckCircle2,
-    ArrowRight,
-    Sparkles,
-    TreePine,
-    Wifi,
-    GraduationCap,
-    Factory,
-    Heart,
-    Calendar,
-    Send,
-    Play,
-    Download,
-    ExternalLink
+  ArrowRight,
+  BookOpen,
+  Building2,
+  Factory,
+  FileText,
+  Globe,
+  GraduationCap,
+  Heart,
+  Landmark,
+  Leaf,
+  Lightbulb,
+  Mail,
+  MapPin,
+  Menu,
+  Phone,
+  Scale,
+  Shield,
+  Smartphone,
+  Target,
+  TreeDeciduous,
+  Users,
+  Zap,
 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  FeatureCards,
+  Footer,
+  NewsletterSignup,
+  StatsCounter,
+  Timeline,
+} from '@/components/parts'
+import type {
+  ContactInfoItem,
+  FeatureItem,
+  FooterLinkSection,
+  SocialLink,
+  StatItem,
+  TimelineEvent,
+} from '@/components/parts/types'
 import { Badge } from '@/components/ui/badge'
-import { Input } from '@/components/ui/input'
-import { Progress } from '@/components/ui/progress'
-import { Separator } from '@/components/ui/separator'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { useState } from 'react'
 
 export const Route = createFileRoute('/home')({
-    component: HomePage,
+  component: HomePage,
 })
 
+const RAJSHahi_IMAGE =
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuCFhg9_mXeBvkWDZ0r0v-KNUGpBhRLl68yFr0v6cU5H_6cRzSydHon5eLTTg_aY55yC-vdZUGOOFn45NlB6HdQeK770JJP8CGUUsdPnRrzhlatDfPDcsPSDD2ddH_nINU84L5QNIRaDgTB01ggPmdSkU4CofaYx5NSWYKuzzb2zE9NKy0AhlIUOH55YrRbV2T6EieNBoSFzqc7VrbUKTtFTimRtF3WbdhihjrLNidG2tam-x5MIRPu4l_nofDcE3WNCmKwi_UyJYYI'
+
 function HomePage() {
-    return (
-        <div className="min-h-screen bg-background">
-            {/* Hero Section */}
-            <section className="relative overflow-hidden bg-linear-to-br from-primary/5 via-background to-emerald-50/30 dark:from-primary/10 dark:via-background dark:to-emerald-950/20">
-                <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
-                <div className="container mx-auto px-4 py-16 md:py-24 relative">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        {/* Hero Text */}
-                        <div className="space-y-6">
-                            <Badge variant="outline" className="gap-2">
-                                <Sparkles className="h-3 w-3" />
-                                রাজশাহী ২.০ — Smart, Green and Just City
-                            </Badge>
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-                            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                                রাজশাহী: আমাদের{' '}
-                                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-emerald-600">
-                                    নতুন সম্ভাবনা
-                                </span>
-                            </h1>
+  const footerLinks: FooterLinkSection[] = [
+    {
+      title: 'দ্রুত লিংক',
+      links: [
+        { label: 'ভিশন', href: '/vision' },
+        { label: 'বর্তমান অবস্থা', href: '/current-status' },
+        { label: 'কেন রূপান্তর', href: '/why-transform' },
+        { label: 'রোডম্যাপ', href: '/roadmap' },
+        { label: 'শাসন কাঠামো', href: '/governance' },
+        { label: 'যোগাযোগ', href: '/contact' },
+      ],
+    },
+  ]
 
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                রাজশাহী আমাদের কাছে সবসময়ই শুধু একটি শহর ছিল না; এটি ছিল পরিচ্ছন্নতা, মর্যাদা, শিক্ষা ও সংস্কৃতির প্রতীক।
-                                এখন সময় এসেছে নিজেকে নতুনভাবে চিনে নেয়ার — একটি Smart, Green and Just City হিসেবে।
-                            </p>
+  const contactInfo: ContactInfoItem[] = [
+    { icon: Mail, label: 'ইমেইল', value: 'info@rajshahi2.0.com', href: 'mailto:info@rajshahi2.0.com' },
+    { icon: Phone, label: 'ফোন', value: '+৮৮০ ১২৩৪ ৫৬৭৮৯০' },
+  ]
 
-                            <div className="flex flex-wrap gap-4">
-                                <Button size="lg" className="gap-2">
-                                    <Play className="h-4 w-4" />
-                                    ভিশন দেখুন
-                                </Button>
-                                <Button size="lg" variant="outline" className="gap-2">
-                                    <Download className="h-4 w-4" />
-                                    ম্যানিফেস্টো ডাউনলোড করুন
-                                </Button>
-                            </div>
-                        </div>
+  const socialLinks: SocialLink[] = [
+    { icon: Globe, label: 'Website', href: '#' },
+    { icon: Globe, label: 'Email', href: 'mailto:info@rajshahi2.0.com' },
+  ]
 
-                        {/* Hero Stats Card */}
-                        <Card className="shadow-2xl border-2">
-                            <CardHeader>
-                                <div className="flex items-center justify-between">
-                                    <CardTitle>লাইভ ট্র্যান্সপারেন্সি ড্যাশবোর্ড</CardTitle>
-                                    <Badge variant="secondary" className="gap-1">
-                                        <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                                        Live
-                                    </Badge>
-                                </div>
-                                <CardDescription>রিয়েল-টাইম প্রগ্রেস মনিটরিং</CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-6">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <p className="text-sm text-muted-foreground">সক্রিয় প্রকল্প</p>
-                                        <p className="text-3xl font-bold">128</p>
-                                        <div className="flex items-center gap-1 text-xs text-green-600">
-                                            <TrendingUp className="h-3 w-3" />
-                                            +12% বৃদ্ধি
-                                        </div>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <p className="text-sm text-muted-foreground">বাজেট ব্যবহার</p>
-                                        <p className="text-3xl font-bold">85%</p>
-                                        <Progress value={85} className="h-2" />
-                                    </div>
-                                </div>
+  const visionFeatures: FeatureItem[] = [
+    {
+      icon: Landmark,
+      title: 'স্মার্ট শাসন (Smart Governance)',
+      description:
+        'সব নাগরিক সেবা এক প্ল্যাটফর্মে (One Rajshahi Portal), Cashless + Paperless সিস্টেম, Real-Time Complaint Tracking, AI-ভিত্তিক Budget & Performance Monitoring',
+    },
+    {
+      icon: Leaf,
+      title: 'সবুজ অর্থনীতি (Green Economy)',
+      description:
+        'Mango, Silk, Vegetable Processing Zone, Agro Cold Chain + Solar-Powered Storage, Waste-to-Bioenergy Plant, Renewable Component Manufacturing',
+    },
+    {
+      icon: Lightbulb,
+      title: 'জ্ঞান ও উদ্ভাবনী শহর (Knowledge & Innovation City)',
+      description:
+        'University-Industry Collaboration Hub, Startup Accelerator + Micro Grant + Maker Lab, Digital Skill Program for All',
+    },
+    {
+      icon: Zap,
+      title: 'স্মার্ট গতিশীলতা ও নগর অবকাঠামো',
+      description:
+        'Low Emission Public Transport, Integrated Bicycle Network + Walkable Street, Smart Drainage + Flood Resilience, Streetlight Sensor Network',
+    },
+    {
+      icon: Heart,
+      title: 'স্বাস্থ্য, খাদ্য নিরাপত্তা ও পরিবেশগত ন্যায়বিচার',
+      description:
+        'Community Clinic with Digital Health Record, Real-Time Food Safety Certification (QR-based Traceability), Industrial Waste Regulation, Green Public Space Expansion',
+    },
+  ]
 
-                                <Separator />
+  const roadmapEvents: TimelineEvent[] = [
+    {
+      year: '১২-১৮ মাস',
+      title: 'আশু সংস্কার (Immediate Reform)',
+      description:
+        'One Rajshahi Digital Portal, Complaint Tracking + Public Dashboard, Ward Development Audit, Online Permit/Trade License Automation, Green Business Registration Incentive। মূল লক্ষ্য: Trust Building',
+    },
+    {
+      year: '২-৫ বছর',
+      title: 'কৌশলগত অবকাঠামো নির্মাণ',
+      description:
+        'Mango & Silk Processing Cluster, Cold Chain & Solar Storage, E-Transport & Smart Rickshaw, Waste-to-Bioenergy Plant, Innovation & Startup Hub। লক্ষ্য: রাজশাহীর অর্থনৈতিক পেশি তৈরি',
+    },
+    {
+      year: '৫+ বছর',
+      title: 'টেকসই বৃদ্ধি ইকোসিস্টেম',
+      description:
+        'City Investment Fund, Green Export Corridor, Education → Skill → Job → Entrepreneurship Pipeline। লক্ষ্য: Dependent City থেকে Self-Sustaining City',
+    },
+  ]
 
-                                <div className="space-y-3">
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-sm">গ্রীন কভার লক্ষ্য</span>
-                                        <span className="text-sm font-semibold">25%</span>
-                                    </div>
-                                    <Progress value={65} className="h-2" />
-                                    <p className="text-xs text-muted-foreground">32,500 / 50,000 গাছ রোপণ সম্পন্ন</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </div>
-            </section>
+  const kpiStats: StatItem[] = [
+    {
+      icon: Smartphone,
+      value: 80,
+      suffix: '%',
+      label: 'ডিজিটাল সেবা',
+      description: 'Online Service Usage Rate — ৫ বছরে লক্ষ্য',
+    },
+    {
+      icon: Factory,
+      value: 2,
+      suffix: 'x',
+      label: 'কৃষি প্রক্রিয়াজাতকরণ',
+      description: 'Agro Processing Output দ্বিগুণ — ৫ বছরে',
+    },
+    {
+      icon: Users,
+      value: 50,
+      suffix: '%+',
+      label: 'তরুণ ধারণ',
+      description: 'Youth Retention Rate বৃদ্ধি — ৫ বছরে',
+    },
+    {
+      icon: Leaf,
+      value: 30,
+      suffix: '%',
+      label: 'বায়ু মান উন্নয়ন',
+      description: 'AQI Improvement Index — ৫ বছরে',
+    },
+  ]
 
-            {/* Stats Section */}
-            <section className="border-y bg-primary text-primary-foreground">
-                <div className="container mx-auto px-4 py-12">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <div className="text-center space-y-2">
-                            <p className="text-4xl md:text-5xl font-bold">12,403</p>
-                            <p className="text-sm opacity-90">স্বেচ্ছাসেবক</p>
-                        </div>
-                        <div className="text-center space-y-2">
-                            <p className="text-4xl md:text-5xl font-bold">50,000+</p>
-                            <p className="text-sm opacity-90">গাছ রোপণের প্রতিশ্রুতি</p>
-                        </div>
-                        <div className="text-center space-y-2">
-                            <p className="text-4xl md:text-5xl font-bold">84%</p>
-                            <p className="text-sm opacity-90">সমস্যা সমাধান হার</p>
-                        </div>
-                        <div className="text-center space-y-2">
-                            <p className="text-4xl md:text-5xl font-bold">০%</p>
-                            <p className="text-sm opacity-90">দুর্নীতি সহনশীলতা</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  return (
+    <div className="min-h-screen bg-background text-foreground" dir="ltr">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
 
-            {/* Vision Framework - 5 Pillars */}
-            <section className="container mx-auto px-4 py-16 md:py-24">
-                <div className="text-center space-y-4 mb-12">
-                    <Badge variant="outline" className="gap-2">
-                        <Target className="h-3 w-3" />
-                        রূপান্তরের মূল দর্শন
-                    </Badge>
-                    <h2 className="text-3xl md:text-5xl font-bold">রাজশাহী ২.০ এর ৫টি স্তম্ভ</h2>
-                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                        Smart, Green and Just City — এটি কেবল স্লোগান নয়; এটি একটি বাস্তব নীতিমালা কাঠামো
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Pillar 1: Smart Governance */}
-                    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2">
-                        <CardHeader>
-                            <div className="h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-950 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <Shield className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                            </div>
-                            <CardTitle>Smart Governance</CardTitle>
-                            <CardDescription>দক্ষতা + Digital Delivery + Accountability</CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-primary mt-1 shrink-0" />
-                                <p className="text-sm">সব নাগরিক সেবা এক প্ল্যাটফর্মে ("One Rajshahi Portal")</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-primary mt-1 shrink-0" />
-                                <p className="text-sm">সম্পূর্ণ Cashless + Paperless সিস্টেম</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-primary mt-1 shrink-0" />
-                                <p className="text-sm">Real-Time Complaint Tracking + Public Dashboard</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-primary mt-1 shrink-0" />
-                                <p className="text-sm">AI-ভিত্তিক Budget & Performance Monitoring</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Pillar 2: Green Economy */}
-                    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2">
-                        <CardHeader>
-                            <div className="h-12 w-12 rounded-lg bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <Leaf className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
-                            </div>
-                            <CardTitle>Green Economy</CardTitle>
-                            <CardDescription>কৃষি থেকে High Value Manufacturing</CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-1 shrink-0" />
-                                <p className="text-sm">Mango, Silk, Vegetable Processing Zone</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-1 shrink-0" />
-                                <p className="text-sm">Agro Cold Chain + Solar-Powered Storage</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-1 shrink-0" />
-                                <p className="text-sm">Waste-to-Bioenergy Plant</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-1 shrink-0" />
-                                <p className="text-sm">Renewable Component Manufacturing</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Pillar 3: Knowledge & Innovation */}
-                    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2">
-                        <CardHeader>
-                            <div className="h-12 w-12 rounded-lg bg-purple-100 dark:bg-purple-950 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <Lightbulb className="h-6 w-6 text-purple-600 dark:text-purple-400" />
-                            </div>
-                            <CardTitle>Knowledge & Innovation City</CardTitle>
-                            <CardDescription>Education to Entrepreneurship Pipeline</CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-purple-600 mt-1 shrink-0" />
-                                <p className="text-sm">University-Industry Collaboration Hub</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-purple-600 mt-1 shrink-0" />
-                                <p className="text-sm">Startup Accelerator + Micro Grant + Maker Lab</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-purple-600 mt-1 shrink-0" />
-                                <p className="text-sm">Digital Skill Program for All</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Pillar 4: Smart Mobility */}
-                    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2">
-                        <CardHeader>
-                            <div className="h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-950 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <Wifi className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                            </div>
-                            <CardTitle>Smart Mobility & Infrastructure</CardTitle>
-                            <CardDescription>পরিবেশবান্ধব যাতায়াত ব্যবস্থা</CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-orange-600 mt-1 shrink-0" />
-                                <p className="text-sm">Low Emission Public Transport (Smart Rickshaw)</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-orange-600 mt-1 shrink-0" />
-                                <p className="text-sm">Integrated Bicycle Network + Walkable Street</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-orange-600 mt-1 shrink-0" />
-                                <p className="text-sm">Smart Drainage + Flood Resilience</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Pillar 5: Health & Environmental Justice */}
-                    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2">
-                        <CardHeader>
-                            <div className="h-12 w-12 rounded-lg bg-rose-100 dark:bg-rose-950 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <Heart className="h-6 w-6 text-rose-600 dark:text-rose-400" />
-                            </div>
-                            <CardTitle>Health & Food Safety</CardTitle>
-                            <CardDescription>Environmental Justice for All</CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-rose-600 mt-1 shrink-0" />
-                                <p className="text-sm">Community Clinic with Digital Health Record</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-rose-600 mt-1 shrink-0" />
-                                <p className="text-sm">Real-Time Food Safety Certification (QR-based)</p>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <CheckCircle2 className="h-4 w-4 text-rose-600 mt-1 shrink-0" />
-                                <p className="text-sm">Industrial Waste Regulation Framework</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
-            </section>
-
-            {/* Flagship Programs */}
-            <section className="bg-muted/30 py-16 md:py-24">
-                <div className="container mx-auto px-4">
-                    <div className="text-center space-y-4 mb-12">
-                        <Badge variant="outline" className="gap-2">
-                            <Sparkles className="h-3 w-3" />
-                            ফ্ল্যাগশিপ প্রোগ্রাম
-                        </Badge>
-                        <h2 className="text-3xl md:text-5xl font-bold">মূল উদ্যোগসমূহ</h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {/* Silicon Rajshahi */}
-                        <Card className="overflow-hidden group hover:shadow-2xl transition-all">
-                            <div className="h-48 bg-linear-to-br from-blue-500 to-purple-600 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all" />
-                                <div className="absolute bottom-4 left-4 right-4">
-                                    <Badge className="mb-2">Tech Innovation</Badge>
-                                    <h3 className="text-white font-bold text-xl">Silicon Rajshahi: AI & Freelancing Hubs</h3>
-                                </div>
-                            </div>
-                            <CardContent className="pt-6 space-y-4">
-                                <p className="text-sm text-muted-foreground">
-                                    ৫টি নতুন অত্যাধুনিক সেন্টার স্থাপন — হাই-স্পিড ইন্টারনেট এবং AI ওয়ার্কস্টেশন সহ, তরুণদের ক্ষমতায়ন এবং স্থানীয় IT অর্থনীতি বৃদ্ধির জন্য।
-                                </p>
-                                <Button variant="outline" className="w-full gap-2">
-                                    আরও জানুন <ArrowRight className="h-4 w-4" />
-                                </Button>
-                            </CardContent>
-                        </Card>
-
-                        {/* Project Padma */}
-                        <Card className="overflow-hidden group hover:shadow-2xl transition-all">
-                            <div className="h-48 bg-linear-to-br from-emerald-500 to-teal-600 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all" />
-                                <div className="absolute bottom-4 left-4 right-4">
-                                    <Badge className="mb-2 bg-emerald-100 text-emerald-900">Green Living</Badge>
-                                    <h3 className="text-white font-bold text-xl">Project Padma</h3>
-                                </div>
-                            </div>
-                            <CardContent className="pt-6 space-y-4">
-                                <p className="text-sm text-muted-foreground">
-                                    নদীর তীর পুনরুদ্ধার এবং ৫০,০০০ তাপ-প্রতিরোধী গাছ রোপণ করে শহরের তাপমাত্রা কমানো।
-                                </p>
-                                <div className="space-y-2">
-                                    <div className="flex justify-between text-sm">
-                                        <span>লক্ষ্য অগ্রগতি</span>
-                                        <span className="font-semibold text-emerald-600">65%</span>
-                                    </div>
-                                    <Progress value={65} className="h-2" />
-                                    <p className="text-xs text-muted-foreground">32,500 / 50,000 গাছ</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-
-                        {/* Digital Governance */}
-                        <Card className="overflow-hidden group hover:shadow-2xl transition-all">
-                            <div className="h-48 bg-linear-to-br from-violet-500 to-purple-600 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all" />
-                                <div className="absolute bottom-4 left-4 right-4">
-                                    <Badge className="mb-2 bg-purple-100 text-purple-900">Citizen App</Badge>
-                                    <h3 className="text-white font-bold text-xl">Report Corruption</h3>
-                                </div>
-                            </div>
-                            <CardContent className="pt-6 space-y-4">
-                                <p className="text-sm text-muted-foreground">
-                                    মেয়রের অফিসে সরাসরি লাইন। বেনামী এবং ব্লকচেইন-যাচাইকৃত।
-                                </p>
-                                <Button className="w-full gap-2">
-                                    <Download className="h-4 w-4" />
-                                    অ্যাপ ডাউনলোড করুন
-                                </Button>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </div>
-            </section>
-
-            {/* Roadmap Timeline */}
-            <section className="container mx-auto px-4 py-16 md:py-24">
-                <div className="text-center space-y-4 mb-12">
-                    <Badge variant="outline" className="gap-2">
-                        <Calendar className="h-3 w-3" />
-                        বাস্তবায়ন পরিকল্পনা
-                    </Badge>
-                    <h2 className="text-3xl md:text-5xl font-bold">রূপান্তরের রোডম্যাপ</h2>
-                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                        তিন ধাপে বাস্তবায়নযোগ্য — Immediate Reform, Strategic Infrastructure Build-up, Sustainable Growth Ecosystem
-                    </p>
-                </div>
-
-                <div className="max-w-4xl mx-auto space-y-8">
-                    {/* Phase 1 */}
-                    <Card className="border-l-4 border-l-blue-500">
-                        <CardHeader>
-                            <div className="flex items-start justify-between">
-                                <div className="space-y-2">
-                                    <Badge variant="secondary">Phase 1</Badge>
-                                    <CardTitle>Immediate Reform (প্রথম ১২-১৮ মাস)</CardTitle>
-                                    <CardDescription>সিস্টেম ও প্রক্রিয়া বদলানো</CardDescription>
-                                </div>
-                                <div className="text-right">
-                                    <p className="text-sm text-muted-foreground">Timeline</p>
-                                    <p className="font-semibold">Q1 2024 - Q2 2025</p>
-                                </div>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <div className="flex items-start gap-3">
-                                <CheckCircle2 className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
-                                <div>
-                                    <p className="font-medium">One Rajshahi Digital Portal চালু করা</p>
-                                    <p className="text-sm text-muted-foreground">নাগরিক সেবা এক প্ল্যাটফর্মে আনা</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <CheckCircle2 className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
-                                <div>
-                                    <p className="font-medium">Complaint Tracking System + Public Dashboard</p>
-                                    <p className="text-sm text-muted-foreground">প্রতিটি কাজ পরিমাপযোগ্য</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <CheckCircle2 className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
-                                <div>
-                                    <p className="font-medium">Online Permit / Trade License Automation</p>
-                                    <p className="text-sm text-muted-foreground">রাজস্ব বাড়বে, দুর্নীতি কমবে</p>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Phase 2 */}
-                    <Card className="border-l-4 border-l-emerald-500">
-                        <CardHeader>
-                            <div className="flex items-start justify-between">
-                                <div className="space-y-2">
-                                    <Badge variant="secondary" className="bg-emerald-100 text-emerald-900">Phase 2</Badge>
-                                    <CardTitle>Strategic Infrastructure Build-up (২-৫ বছর)</CardTitle>
-                                    <CardDescription>মৌলিক কাঠামো উন্নয়ন</CardDescription>
-                                </div>
-                                <div className="text-right">
-                                    <p className="text-sm text-muted-foreground">Timeline</p>
-                                    <p className="font-semibold">2025 - 2028</p>
-                                </div>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <div className="flex items-start gap-3">
-                                <Factory className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
-                                <div>
-                                    <p className="font-medium">Mango & Silk Processing Cluster</p>
-                                    <p className="text-sm text-muted-foreground">PPP (Public-Private Partnership) মডেল</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <TreePine className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
-                                <div>
-                                    <p className="font-medium">Cold Chain & Solar Storage Center</p>
-                                    <p className="text-sm text-muted-foreground">Build-Operate Model</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <GraduationCap className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
-                                <div>
-                                    <p className="font-medium">Innovation & Startup Hub (University Linked)</p>
-                                    <p className="text-sm text-muted-foreground">Co-Managed Facility</p>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Phase 3 */}
-                    <Card className="border-l-4 border-l-purple-500">
-                        <CardHeader>
-                            <div className="flex items-start justify-between">
-                                <div className="space-y-2">
-                                    <Badge variant="secondary" className="bg-purple-100 text-purple-900">Phase 3</Badge>
-                                    <CardTitle>Sustainable Growth Ecosystem (৫+ বছর)</CardTitle>
-                                    <CardDescription>উন্নয়ন-উৎপাদক শহর</CardDescription>
-                                </div>
-                                <div className="text-right">
-                                    <p className="text-sm text-muted-foreground">Timeline</p>
-                                    <p className="font-semibold">2028+</p>
-                                </div>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <div className="flex items-start gap-3">
-                                <BarChart3 className="h-5 w-5 text-purple-500 mt-0.5 shrink-0" />
-                                <div>
-                                    <p className="font-medium">City Investment Fund গঠন</p>
-                                    <p className="text-sm text-muted-foreground">স্থানীয় ব্যবসায়ী ও প্রবাসী বিনিয়োগ</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <ExternalLink className="h-5 w-5 text-purple-500 mt-0.5 shrink-0" />
-                                <div>
-                                    <p className="font-medium">Green Export Corridor</p>
-                                    <p className="text-sm text-muted-foreground">Dedicated Logistics Chain</p>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
-            </section>
-
-            {/* KPI Framework */}
-            <section className="bg-muted/30 py-16 md:py-24">
-                <div className="container mx-auto px-4">
-                    <div className="text-center space-y-4 mb-12">
-                        <Badge variant="outline" className="gap-2">
-                            <BarChart3 className="h-3 w-3" />
-                            পরিমাপযোগ্য ফলাফল
-                        </Badge>
-                        <h2 className="text-3xl md:text-5xl font-bold">KPI Framework</h2>
-                        <p className="text-lg text-muted-foreground">প্রতি বছর নাগরিক দেখতে পাবে — আমরা এগোচ্ছি কিনা</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                        <Card>
-                            <CardHeader>
-                                <CardTitle className="text-sm font-medium text-muted-foreground">Digital Service</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-4xl font-bold mb-2">80%</p>
-                                <p className="text-sm text-muted-foreground">Online Service Usage Rate</p>
-                                <p className="text-xs text-muted-foreground mt-2">লক্ষ্য: ৫ বছরে</p>
-                            </CardContent>
-                        </Card>
-
-                        <Card>
-                            <CardHeader>
-                                <CardTitle className="text-sm font-medium text-muted-foreground">Economy</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-4xl font-bold mb-2">২x</p>
-                                <p className="text-sm text-muted-foreground">Agro Processing Output</p>
-                                <p className="text-xs text-muted-foreground mt-2">দ্বিগুণ বৃদ্ধি</p>
-                            </CardContent>
-                        </Card>
-
-                        <Card>
-                            <CardHeader>
-                                <CardTitle className="text-sm font-medium text-muted-foreground">Employment</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-4xl font-bold mb-2">+50%</p>
-                                <p className="text-sm text-muted-foreground">Youth Retention Rate</p>
-                                <p className="text-xs text-muted-foreground mt-2">তরুণ ধরে রাখা</p>
-                            </CardContent>
-                        </Card>
-
-                        <Card>
-                            <CardHeader>
-                                <CardTitle className="text-sm font-medium text-muted-foreground">Environment</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-4xl font-bold mb-2">-30%</p>
-                                <p className="text-sm text-muted-foreground">AQI Improvement Index</p>
-                                <p className="text-xs text-muted-foreground mt-2">বায়ু মান উন্নতি</p>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </div>
-            </section>
-
-            {/* Call to Action */}
-            <section className="container mx-auto px-4 py-16 md:py-24">
-                <Card className="bg-linear-to-br from-primary to-emerald-600 text-primary-foreground border-0 shadow-2xl">
-                    <CardContent className="p-12 text-center space-y-6">
-                        <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm mb-4">
-                            <Users className="h-8 w-8" />
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-bold">নাগরিক হিসেবে আমাদের ভূমিকা</h2>
-                        <p className="text-lg opacity-90 max-w-2xl mx-auto">
-                            একটি শহরকে রূপান্তরিত করতে প্রশাসন প্রয়োজন, কিন্তু মালিক হয় মানুষ। রাজশাহী ২.০ বাস্তবায়নের চাবিকাঠি হলো — ownership shift।
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                            <Input
-                                type="email"
-                                placeholder="আপনার ইমেইল দিন"
-                                className="max-w-sm bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                            />
-                            <Button size="lg" variant="secondary" className="gap-2">
-                                <Send className="h-4 w-4" />
-                                যোগ দিন
-                            </Button>
-                        </div>
-                        <p className="text-xs opacity-75">
-                            "We the Rajshahi" — নাগরিক কেবল ভোটার নয় — co-creator
-                        </p>
-                    </CardContent>
-                </Card>
-            </section>
-
-            {/* Footer Quote */}
-            <section className="border-t bg-muted/50 py-12">
-                <div className="container mx-auto px-4 text-center">
-                    <blockquote className="text-xl md:text-2xl font-medium italic max-w-4xl mx-auto">
-                        "আমরা শুধু পরিষ্কার শহর ছিলাম না — আমরা ছিলাম অগ্রসর, ন্যায্য ও উদ্ভাবনী একটি শহর।
-                        এবং আমরা তা অন্য কেউ করে দেয়নি — আমরা নিজেরাই করেছি।"
-                    </blockquote>
-                    <p className="text-sm text-muted-foreground mt-6">— রাজশাহী ২.০ ভিশন</p>
-                </div>
-            </section>
+      {/* Campaign Header */}
+      <header
+        className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60"
+        style={{ fontFamily: "'Noto Sans Bengali', sans-serif" }}
+      >
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link to="/home" className="flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <Building2 className="size-6" />
+            </div>
+            <span className="text-xl font-bold tracking-tight">রাজশাহী ২.০</span>
+          </Link>
+          <nav className="hidden md:flex md:items-center md:gap-6 lg:gap-8">
+            <Link
+              to="/vision"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              ভিশন
+            </Link>
+            <Link
+              to="/current-status"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              বর্তমান অবস্থা
+            </Link>
+            <Link
+              to="/why-transform"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              কেন রূপান্তর
+            </Link>
+            <Link
+              to="/roadmap"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              রোডম্যাপ
+            </Link>
+            <Link
+              to="/governance"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              শাসন
+            </Link>
+            <Link
+              to="/contact"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              যোগাযোগ
+            </Link>
+          </nav>
+          <div className="flex items-center gap-4">
+            <Button asChild size="sm" className="hidden sm:inline-flex">
+              <Link to="/contact">স্বেচ্ছাসেবক হোন</Link>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <Menu className="size-5" />
+            </Button>
+          </div>
         </div>
-    )
+        {mobileMenuOpen && (
+          <div className="border-t border-border bg-background px-4 py-4 md:hidden">
+            <nav className="flex flex-col gap-2">
+              <Link to="/vision" className="py-2 text-sm" onClick={() => setMobileMenuOpen(false)}>
+                ভিশন
+              </Link>
+              <Link to="/current-status" className="py-2 text-sm" onClick={() => setMobileMenuOpen(false)}>
+                বর্তমান অবস্থা
+              </Link>
+              <Link to="/why-transform" className="py-2 text-sm" onClick={() => setMobileMenuOpen(false)}>
+                কেন রূপান্তর
+              </Link>
+              <Link to="/roadmap" className="py-2 text-sm" onClick={() => setMobileMenuOpen(false)}>
+                রোডম্যাপ
+              </Link>
+              <Link to="/governance" className="py-2 text-sm" onClick={() => setMobileMenuOpen(false)}>
+                শাসন
+              </Link>
+              <Link to="/contact" className="py-2 text-sm" onClick={() => setMobileMenuOpen(false)}>
+                যোগাযোগ
+              </Link>
+              <Button asChild className="mt-2">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  স্বেচ্ছাসেবক হোন
+                </Link>
+              </Button>
+            </nav>
+          </div>
+        )}
+      </header>
+
+      <main style={{ fontFamily: "'Noto Sans Bengali', sans-serif" }}>
+        {/* Section A: Hero / Introduction */}
+        <section
+          id="intro"
+          className="relative flex min-h-[80vh] items-center justify-center overflow-hidden border-b border-border"
+        >
+          <div className="absolute inset-0 -z-10">
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-20"
+              style={{ backgroundImage: `url(${RAJSHahi_IMAGE})` }}
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-transparent" />
+          </div>
+          <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
+            <Badge className="mb-6" variant="secondary">
+              নির্বাচনী ইশতেহার ২০২৪
+            </Badge>
+            <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+              রাজশাহী ২.০: Smart, Green and Just City
+            </h1>
+            <p className="mx-auto mb-10 max-w-3xl text-lg text-muted-foreground md:text-xl">
+              রাজশাহী আমাদের কাছে শুধু একটি শহর ছিল না; এটি ছিল পরিচ্ছন্নতা, মর্যাদা, শিক্ষা ও সংস্কৃতির
+              প্রতীক। আমাদের প্রজন্ম বেড়ে উঠেছে পদ্মার পাড়ে হাঁটতে হাঁটতে। এখন সময় এসেছে নিজেকে
+              নতুনভাবে চিনে নেয়ার — রাজশাহী আর শুধু পরিচ্ছন্ন শহর হওয়াই যথেষ্ট নয়; এখন তাকে হতে হবে
+              একটি Smart, Green and Just City।
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg">
+                <Link to="/vision">
+                  ভিশন দেখুন
+                  <ArrowRight className="ml-2 size-4" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/why-transform">
+                  <BookOpen className="mr-2 size-4" />
+                  ইশতেহার পড়ুন
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Section B: Current Reality */}
+        <section id="reality" className="border-b border-border bg-muted/30 py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 border-l-4 border-primary pl-6">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                রাজশাহীর বর্তমান বাস্তবতা — ডেটা ও বিশ্লেষণভিত্তিক মূল্যায়ন
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                উন্নয়নের গ্রাফ উর্ধ্বমুখী হলেও আমাদের সামনে রয়েছে বেশ কিছু কাঠামোগত চ্যালেঞ্জ।
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Card className="overflow-hidden p-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <Users className="size-8 text-primary" />
+                  <Badge variant="secondary">B.1</Badge>
+                </div>
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+                  জনসংখ্যা ও নগর কাঠামো
+                </h3>
+                <p className="text-muted-foreground">
+                  রাজশাহী সিটি কর্পোরেশন এলাকার জনসংখ্যা আনুমানিক ৮-৯ লাখ, আশেপাশের উপশহর মিলিয়ে ১৫
+                  লাখেরও বেশি। শহরের অভ্যন্তরে অনানুষ্ঠানিক বসতিও বাড়ছে। রাজশাহী এখন আর ছোট শহর নয় —
+                  কিন্তু এখনও ছোট শহরের মানসিকতা বজায় রেখেছে।
+                </p>
+              </Card>
+
+              <Card className="overflow-hidden p-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <Factory className="size-8 text-primary" />
+                  <Badge variant="secondary">B.2</Badge>
+                </div>
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+                  অর্থনীতি ও কর্মসংস্থান
+                </h3>
+                <p className="text-muted-foreground">
+                  অর্থনীতি মূলত কৃষি (আম, ধান, আলু), প্রাণিজ ও সরকারি চাকরি/শিক্ষা নির্ভর। Manufacturing
+                  বা Service Sector এখনো বাস্তবিকভাবে বিকশিত হয়নি। সিল্ক শিল্প প্রায় বিলুপ্তির পথে।
+                </p>
+              </Card>
+
+              <Card className="overflow-hidden p-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <GraduationCap className="size-8 text-primary" />
+                  <Badge variant="destructive">B.3</Badge>
+                </div>
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+                  দক্ষতা ও Brain Drain
+                </h3>
+                <p className="text-muted-foreground">
+                  রাজশাহী বিশ্ববিদ্যালয়, RUET, RMC — হাজার হাজার গ্রাজুয়েট তৈরি করলেও ৭০% এর বেশি
+                  ঢাকায় বা বিদেশে চলে যায়। শহর তার নিজের মেধা ধরে রাখতে পারছে না।
+                </p>
+              </Card>
+
+              <Card className="overflow-hidden p-6 sm:col-span-2">
+                <div className="mb-4 flex items-center justify-between">
+                  <Shield className="size-8 text-primary" />
+                  <Badge variant="secondary">B.4–B.6</Badge>
+                </div>
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+                  অবকাঠামো, পরিবেশ ও প্রশাসনিক সীমাবদ্ধতা
+                </h3>
+                <p className="text-muted-foreground">
+                  পানিবিদ্যুৎ ও সড়কে মোটামুটি স্থিতি থাকলেও ড্রেনেজ, বর্জ্য ও Digital Service Delivery
+                  পুরনো কাঠামোয় আটকে। AQI খারাপ হচ্ছে। Transparency বা Accountability এর
+                  পরিমাপযোগ্য ফ্রেমওয়ার্ক নেই। Citizen as Stakeholder ধারণা এখনো কার্যকর হয়নি।
+                </p>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Section C: Why Transform Now */}
+        <section id="why-now" className="px-4 py-16 md:py-24">
+          <div className="mx-auto max-w-5xl">
+            <Card className="relative overflow-hidden border-border bg-card">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-accent/5" />
+              <div className="relative z-10 p-8 text-center md:p-12 lg:p-16">
+                <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+                  কেন এখনই রূপান্তরের সময় — সমস্যা থেকে সমাধানের পথে
+                </h2>
+                <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
+                  রাজশাহী দীর্ঘদিন ধরে শান্ত, পরিচ্ছন্ন ও স্থিতিশীল। কিন্তু স্থিতিশীলতা যদি অগ্রগতির
+                  পথে বাধা হয়ে দাঁড়ায়, তবে সেটাই হয়ে যায় উন্নয়ন-প্রতিরোধী মানসিকতা। আমাদের ধীরে ধীরে
+                  উন্নয়ন নয় — এক ধাপ লাফিয়ে এগোনোর সময় এখনই। Leapfrog Development Model অনুসরণ করে।
+                  'আরও একটু ভালো হলেই চলবে' মানসিকতা পরিবর্তন জরুরি। Brain Drain বাড়বে, কৃষি আয় কমতে
+                  থাকবে, AQI খারাপ হলে Health Burden বাড়বে — যদি এখন পরিবর্তন না করি। গাজীপুর, সিলেট,
+                  খুলনা এগোচ্ছে। রাজশাহী ২.০ কেবল সিটি কর্পোরেশনের পরিকল্পনা নয়; এটি একটি সমষ্টিগত
+                  Social Contract।
+                </p>
+                <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row">
+                  <Button asChild size="lg">
+                    <Link to="/why-transform">
+                      বিস্তারিত জানুন
+                      <ArrowRight className="ml-2 size-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <Link to="/vision">
+                      <BookOpen className="mr-2 size-4" />
+                      ভিশন দেখুন
+                    </Link>
+                  </Button>
+                </div>
+                <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+                  যে শহর নিজের সমস্যাকে পরিমিতভাবে চিহ্নিত করতে পারে, সেই শহরই সঠিক সমাধান বেছে
+                  নিতে পারে
+                </p>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        {/* Section D: Vision Framework */}
+        <section id="vision" className="border-b border-border py-16 md:py-24">
+          <FeatureCards
+            title="রাজশাহী ২.০ — রূপান্তরের মূল দর্শন"
+            description="রাজশাহীকে আমরা তিনটি শব্দে নতুনভাবে সংজ্ঞায়িত করতে চাই — Smart, Green and Just City। এটি কেবল স্লোগান নয়; এটি একটি বাস্তব নীতিমালা কাঠামো।"
+            features={visionFeatures}
+          />
+        </section>
+
+        {/* Section E: Roadmap */}
+        <section id="roadmap" className="border-b border-border bg-muted/20 py-16 md:py-24">
+          <Timeline
+            badge="রাজশাহী ২.০ রোডম্যাপ"
+            title="রূপান্তর কীভাবে বাস্তবায়িত হবে"
+            description="তিন ধাপে বাস্তবায়নযোগ্য — Immediate Reform, Strategic Infrastructure Build-up, Sustainable Growth Ecosystem।"
+            events={roadmapEvents}
+            futureText="রাজশাহী 'Dependent City' থেকে 'Self-Sustaining City' তে পরিণত হবে"
+          />
+        </section>
+
+        {/* Section F: Governance */}
+        <section id="governance" className="border-b border-border py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <Badge className="mb-4" variant="secondary">
+                প্রশাসনিক কাঠামো
+              </Badge>
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                প্রশাসনিক কাঠামো ও অংশীদারিত্ব মডেল
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+                Governance Model → Mayor + City CEO + Citizen Board
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <Card className="p-6">
+                <Landmark className="mb-4 size-10 text-primary" />
+                <h3 className="font-bold">মেয়র</h3>
+                <p className="text-sm text-muted-foreground">Vision Leader</p>
+              </Card>
+              <Card className="p-6">
+                <Target className="mb-4 size-10 text-primary" />
+                <h3 className="font-bold">সিটি সিইও</h3>
+                <p className="text-sm text-muted-foreground">Execution Manager</p>
+              </Card>
+              <Card className="p-6">
+                <Users className="mb-4 size-10 text-primary" />
+                <h3 className="font-bold">সিটিজেন অ্যাডভাইজরি বোর্ড</h3>
+                <p className="text-sm text-muted-foreground">Accountability Partner</p>
+              </Card>
+            </div>
+            <div className="mt-12">
+              <h3 className="mb-4 font-bold">Stakeholder Mapping</h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="flex gap-3 rounded-lg border border-border p-4">
+                  <Building2 className="size-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="font-medium">সিটি কর্পোরেশন</p>
+                    <p className="text-sm text-muted-foreground">নীতি নির্ধারণ ও বাস্তবায়ন সমন্বয়</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-lg border border-border p-4">
+                  <Factory className="size-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="font-medium">বাণিজ্য সমিতি</p>
+                    <p className="text-sm text-muted-foreground">Green Investment সহায়তা</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-lg border border-border p-4">
+                  <TreeDeciduous className="size-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="font-medium">কৃষক সংগঠন</p>
+                    <p className="text-sm text-muted-foreground">Agro Reform অংশীদার</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-lg border border-border p-4">
+                  <GraduationCap className="size-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="font-medium">বিশ্ববিদ্যালয়</p>
+                    <p className="text-sm text-muted-foreground">Talent ও Research ভিত্তি</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-lg border border-border p-4 sm:col-span-2">
+                  <Zap className="size-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="font-medium">তরুণ সমাজ</p>
+                    <p className="text-sm text-muted-foreground">Innovation ও Volunteering Network</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 text-center">
+              <Button asChild variant="outline">
+                <Link to="/governance">
+                  বিস্তারিত শাসন কাঠামো
+                  <ArrowRight className="ml-2 size-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Section G: KPI Framework */}
+        <section id="kpi">
+          <StatsCounter
+            badge="পরিমাপযোগ্য ফলাফল"
+            title="প্রতি বছর নাগরিক দেখতে পাবে"
+            titleHighlight="— আমরা এগোচ্ছি কিনা"
+            description="৫ বছরের লক্ষ্যমাত্রা নির্দিষ্ট KPI এর মাধ্যমে ট্র্যাক করা হবে।"
+            stats={kpiStats}
+          />
+        </section>
+
+        {/* Section H & I: Monitoring + Financial Transparency */}
+        <section id="transparency" className="border-b border-border bg-muted/30 py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <Badge className="mb-4" variant="secondary">
+                স্বচ্ছতাই শক্তি
+              </Badge>
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                বাস্তবায়ন কি সত্যিই হবে? — Monitoring ও Accountability
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+                কেবল পরিকল্পনা ঘোষণা নয় — অর্জন পরিমাপযোগ্য হতে হবে
+              </p>
+            </div>
+            <div className="grid gap-8 lg:grid-cols-2">
+              <Card className="p-6">
+                <h3 className="mb-4 flex items-center gap-2 font-bold">
+                  <Target className="size-5 text-primary" />
+                  Public Performance Dashboard
+                </h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• প্রতিটি প্রকল্পের Progress Indicator: % Completion, Budget Used</li>
+                  <li>• ওয়েবসাইট/অ্যাপে নাগরিক দেখতে পারবে কাজ এগোচ্ছে কিনা</li>
+                  <li>• প্রতিটি ওয়ার্ডের বার্ষিক স্কোরকার্ড</li>
+                  <li>• Citizen Audit Committee (প্রতি ওয়ার্ডে)</li>
+                  <li>• Public Hearing & Ward Dialogue (ত্রৈমাসিক)</li>
+                  <li>• Digital Complaint Resolution SLA</li>
+                </ul>
+              </Card>
+              <Card className="p-6">
+                <h3 className="mb-4 flex items-center gap-2 font-bold">
+                  <Scale className="size-5 text-primary" />
+                  আর্থিক স্বচ্ছতা ও দীর্ঘমেয়াদি স্থায়িত্ব
+                </h3>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  সিটি কর্পোরেশনের সম্পূর্ণ বাজেট বিভাগভিত্তিক Public Ledger আকারে থাকবে। নাগরিক জানতে
+                  পারবে কোন ওয়ার্ডে কত খরচ হলো।
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Local Tax + Digital Payment Expansion</li>
+                  <li>• PPP Model — Green Industry, Waste-Energy, Transport</li>
+                  <li>• International Development Grant</li>
+                  <li>• CSR Fund + Philanthropy</li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Section J: Citizen Role */}
+        <section id="citizen-role" className="px-4 py-16 md:py-24">
+          <div className="mx-auto max-w-5xl">
+            <Card className="relative overflow-hidden border-border bg-card">
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-accent/5" />
+              <div className="relative z-10 p-8 text-center md:p-12 lg:p-16">
+                <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+                  নাগরিক হিসেবে আমাদের ভূমিকা — We the Rajshahi
+                </h2>
+                <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
+                  একটি শহরকে রূপান্তরিত করতে প্রশাসন প্রয়োজন, কিন্তু মালিক হয় মানুষ। রাজশাহী ২.০
+                  বাস্তবায়নের চাবিকাঠি — ownership shift। নাগরিক কেবল ভোটার নয় — co-creator। তরুণ কেবল
+                  সমালোচক নয় — solution architect। ব্যবসায়ী কেবল ট্যাক্স প্রদানকারী নয় — development
+                  investor। কৃষক কেবল উৎপাদক নয় — value chain stakeholder।
+                </p>
+                <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                  <Button asChild size="lg">
+                    <Link to="/contact">
+                      <Heart className="mr-2 size-4" />
+                      যুক্ত হোন
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <Link to="/contact">
+                      <FileText className="mr-2 size-4" />
+                      যোগাযোগ
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        {/* Section K: Closing + Newsletter */}
+        <section id="closing" className="border-b border-border py-16 md:py-24">
+          <div className="mx-auto max-w-4xl px-4 text-center">
+            <blockquote className="mb-8">
+              <p className="text-2xl font-bold leading-relaxed md:text-3xl">
+                "আমরা শুধু পরিষ্কার শহর ছিলাম না — আমরা ছিলাম অগ্রসর, ন্যায়পরায়ণ ও উদ্ভাবনী একটি শহর।
+                এবং আমরা তা অন্য কেউ করে দেয়নি — আমরা নিজেরাই করেছি।"
+              </p>
+            </blockquote>
+            <p className="mb-8 text-lg text-muted-foreground">
+              রাজশাহী থেমে থাকার শহর নয়। আজ যদি আমরা চাই, রাজশাহী আগামী ৫ থেকে ১০ বছরের মধ্যেই
+              Bangladesh-এর Smartest City হতে পারে। শুধু প্রশাসনিক উন্নয়ন নয় — মনের উন্নয়ন, সিদ্ধান্তের
+              উন্নয়ন, দক্ষ ব্যবস্থাপনার রূপান্তর — এটাই রাজশাহী ২.০ এর লক্ষ্য।
+            </p>
+          </div>
+          <NewsletterSignup
+            badge="যুক্ত হোন"
+            title="আসুন, আপনিও হোন এই পরিবর্তনের সহ-স্থপতি"
+            description="আপনার মতামত ও অংশগ্রহণই আমাদের শক্তি। ইমেইল দিন — আপডেট পাবেন।"
+            placeholder="আপনার ইমেইল লিখুন"
+            submitText="যুক্ত হোন"
+          />
+        </section>
+
+        {/* Footer */}
+        <Footer
+          linkSections={footerLinks}
+          socialLinks={socialLinks}
+          brandName="রাজশাহী ২.০"
+          brandTagline="Smart, Green and Just City"
+          description="একটি স্বচ্ছ, জবাবদিহিমূলক এবং প্রযুক্তিনির্ভর আগামীর রাজশাহী গড়ার প্রত্যয় নিয়ে।"
+          contactInfo={contactInfo}
+          newsletterPlaceholder="আপনার ইমেইল লিখুন"
+          copyright="© ২০২৪ রাজশাহী ২.০ নির্বাচনী প্রচারণা। সর্বস্বত্ব সংরক্ষিত।"
+        />
+      </main>
+    </div>
+  )
 }

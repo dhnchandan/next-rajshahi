@@ -9,7 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WhyTransformRouteImport } from './routes/why-transform'
+import { Route as VisionRouteImport } from './routes/vision'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as Home3RouteImport } from './routes/home3'
+import { Route as Home2RouteImport } from './routes/home2'
 import { Route as HomeRouteImport } from './routes/home'
+import { Route as GovernanceRouteImport } from './routes/governance'
+import { Route as CurrentStatusRouteImport } from './routes/current-status'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TalksIndexRouteImport } from './routes/talks.index'
 import { Route as SpeakersIndexRouteImport } from './routes/speakers.index'
@@ -35,9 +43,49 @@ import { Route as DemoStartSsrSpaModeRouteImport } from './routes/demo/start.ssr
 import { Route as DemoStartSsrFullSsrRouteImport } from './routes/demo/start.ssr.full-ssr'
 import { Route as DemoStartSsrDataOnlyRouteImport } from './routes/demo/start.ssr.data-only'
 
+const WhyTransformRoute = WhyTransformRouteImport.update({
+  id: '/why-transform',
+  path: '/why-transform',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisionRoute = VisionRouteImport.update({
+  id: '/vision',
+  path: '/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Home3Route = Home3RouteImport.update({
+  id: '/home3',
+  path: '/home3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Home2Route = Home2RouteImport.update({
+  id: '/home2',
+  path: '/home2',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GovernanceRoute = GovernanceRouteImport.update({
+  id: '/governance',
+  path: '/governance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CurrentStatusRoute = CurrentStatusRouteImport.update({
+  id: '/current-status',
+  path: '/current-status',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -163,7 +211,15 @@ const DemoStartSsrDataOnlyRoute = DemoStartSsrDataOnlyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/current-status': typeof CurrentStatusRoute
+  '/governance': typeof GovernanceRoute
   '/home': typeof HomeRoute
+  '/home2': typeof Home2Route
+  '/home3': typeof Home3Route
+  '/roadmap': typeof RoadmapRoute
+  '/vision': typeof VisionRoute
+  '/why-transform': typeof WhyTransformRoute
   '/api/$': typeof ApiSplatRoute
   '/api/remy-chat': typeof ApiRemyChatRoute
   '/demo/convex': typeof DemoConvexRoute
@@ -190,7 +246,15 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/current-status': typeof CurrentStatusRoute
+  '/governance': typeof GovernanceRoute
   '/home': typeof HomeRoute
+  '/home2': typeof Home2Route
+  '/home3': typeof Home3Route
+  '/roadmap': typeof RoadmapRoute
+  '/vision': typeof VisionRoute
+  '/why-transform': typeof WhyTransformRoute
   '/api/$': typeof ApiSplatRoute
   '/api/remy-chat': typeof ApiRemyChatRoute
   '/demo/convex': typeof DemoConvexRoute
@@ -218,7 +282,15 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/current-status': typeof CurrentStatusRoute
+  '/governance': typeof GovernanceRoute
   '/home': typeof HomeRoute
+  '/home2': typeof Home2Route
+  '/home3': typeof Home3Route
+  '/roadmap': typeof RoadmapRoute
+  '/vision': typeof VisionRoute
+  '/why-transform': typeof WhyTransformRoute
   '/api/$': typeof ApiSplatRoute
   '/api/remy-chat': typeof ApiRemyChatRoute
   '/demo/convex': typeof DemoConvexRoute
@@ -247,7 +319,15 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
+    | '/current-status'
+    | '/governance'
     | '/home'
+    | '/home2'
+    | '/home3'
+    | '/roadmap'
+    | '/vision'
+    | '/why-transform'
     | '/api/$'
     | '/api/remy-chat'
     | '/demo/convex'
@@ -274,7 +354,15 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contact'
+    | '/current-status'
+    | '/governance'
     | '/home'
+    | '/home2'
+    | '/home3'
+    | '/roadmap'
+    | '/vision'
+    | '/why-transform'
     | '/api/$'
     | '/api/remy-chat'
     | '/demo/convex'
@@ -301,7 +389,15 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contact'
+    | '/current-status'
+    | '/governance'
     | '/home'
+    | '/home2'
+    | '/home3'
+    | '/roadmap'
+    | '/vision'
+    | '/why-transform'
     | '/api/$'
     | '/api/remy-chat'
     | '/demo/convex'
@@ -329,7 +425,15 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  CurrentStatusRoute: typeof CurrentStatusRoute
+  GovernanceRoute: typeof GovernanceRoute
   HomeRoute: typeof HomeRoute
+  Home2Route: typeof Home2Route
+  Home3Route: typeof Home3Route
+  RoadmapRoute: typeof RoadmapRoute
+  VisionRoute: typeof VisionRoute
+  WhyTransformRoute: typeof WhyTransformRoute
   ApiSplatRoute: typeof ApiSplatRoute
   ApiRemyChatRoute: typeof ApiRemyChatRoute
   DemoConvexRoute: typeof DemoConvexRoute
@@ -357,11 +461,67 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/why-transform': {
+      id: '/why-transform'
+      path: '/why-transform'
+      fullPath: '/why-transform'
+      preLoaderRoute: typeof WhyTransformRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision': {
+      id: '/vision'
+      path: '/vision'
+      fullPath: '/vision'
+      preLoaderRoute: typeof VisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home3': {
+      id: '/home3'
+      path: '/home3'
+      fullPath: '/home3'
+      preLoaderRoute: typeof Home3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home2': {
+      id: '/home2'
+      path: '/home2'
+      fullPath: '/home2'
+      preLoaderRoute: typeof Home2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home': {
       id: '/home'
       path: '/home'
       fullPath: '/home'
       preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/governance': {
+      id: '/governance'
+      path: '/governance'
+      fullPath: '/governance'
+      preLoaderRoute: typeof GovernanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/current-status': {
+      id: '/current-status'
+      path: '/current-status'
+      fullPath: '/current-status'
+      preLoaderRoute: typeof CurrentStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -537,7 +697,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  CurrentStatusRoute: CurrentStatusRoute,
+  GovernanceRoute: GovernanceRoute,
   HomeRoute: HomeRoute,
+  Home2Route: Home2Route,
+  Home3Route: Home3Route,
+  RoadmapRoute: RoadmapRoute,
+  VisionRoute: VisionRoute,
+  WhyTransformRoute: WhyTransformRoute,
   ApiSplatRoute: ApiSplatRoute,
   ApiRemyChatRoute: ApiRemyChatRoute,
   DemoConvexRoute: DemoConvexRoute,
